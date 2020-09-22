@@ -6,12 +6,21 @@ class BlogsController < ApplicationController
   end
 
   def new
+      @blog = Blog.new #「Blog.new」で空のモデルが生成される。
   end
   
   def create
-    @blog = Blog.new #form_with(新規投稿用フォーム)を使うにはインスタンス変数が必要。新規データ登録用のblogインスタンスを、Blogモデルから作成。『Blog.new」で空のモデルが生成される。
+      blog = Blog.new(blog_params) #モデル名がblog➡️アクション名はblog_params。
+      blog.save
+      redirect_to blogs_path #インデックスに飛ぶ。パス名は$rails routesで確認できる
   end
 
   def edit
   end
+  
+  private
+  def blog_params
+      params.require(:blog).permit(:title, :category, :body)
+  end
+  
 end
