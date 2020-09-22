@@ -1,8 +1,10 @@
 class BlogsController < ApplicationController
-  def index
-  end
 
   def show
+  end
+  
+  def index #top画面に対応するのはindexアクション
+      @blogs = Blog.all #全ての情報を取得
   end
 
   def new
