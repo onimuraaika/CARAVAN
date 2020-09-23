@@ -40,14 +40,14 @@
   <section class="blog">
     <h2 class="blog-heading">Recent Blogs</h2>
     <div class="blog-box">
-<!--ここから変更-->
-      <% @blogs.each do |blog| %>
+<!--ここから変更/ループ処理の追加-->
+      <% @blogs.each do |blog| %> <!--@blogsに入った情報を順番に表示する。この操作のコードを「blog」と以下省略する。-->
         <div class="blog-item">
-          <div class="blog-image"><%= image_tag('img/forest.jpg', class: 'blog-image') %></div>
+          <div class="blog-image"><%= image_tag('img/forest.jpg',  class: 'blog-image') %></div> <!---->
           <section class="blog-text">
-            <h3 class="blog-text-headline"><%= link_to blog.title, blog_path(blog) %></h3>
-            <p class="blog-date"><%= blog.created_at %></p>
-            <span class="category"><%= blog.category %></span>
+            <h3 class="blog-text-headline"><%= link_to blog.title, blog_path(blog) %></h3> <!--タイトルボタンを押すと記事に移動。「blog」は「|blog|」が入る。「blog_path」のblogはルートの名前、「$rails routes」でshowアクションを呼び出すルート名を確認できる。-->
+            <p class="blog-date"><%= blog.created_at %></p> <!--「blog」は「|blog|」が入る。「created_at」は作成日時。-->
+            <span class="category"><%= blog.category %></span> <!--「blog」は「|blog|」が入る。「category」はカラム名。-->
           </section>
         </div>
       <% end %>

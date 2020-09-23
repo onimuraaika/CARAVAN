@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   end
   
   def index #top画面に対応するのはindexアクション
-      @blogs = Blog.all #全ての情報を取得
+      @blogs = Blog.all #全ての情報を取得して@blogsに入れる
   end
 
   def new
@@ -12,7 +12,7 @@ class BlogsController < ApplicationController
   end
   
   def create
-      blog = Blog.new(blog_params) #モデル名がblog➡️アクション名はblog_params。
+      blog = Blog.new(blog_params) #モデル名が「blog➡️アクション名はblog_params。
       blog.save
       redirect_to blogs_path #インデックスに飛ぶ。パス名は$rails routesで確認できる
   end
