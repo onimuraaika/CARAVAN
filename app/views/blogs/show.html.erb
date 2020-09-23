@@ -1,6 +1,6 @@
 <header>
   <h1 class="heading">
-    <%= link_to "CARAVAN", blogs_path %>
+    <%= link_to "CARAVAN", blogs_path %> <!--「blogs_path」は#index-->
   </h1>
   <div class="social">
     <i class="fa fa-facebook-square"></i>
@@ -49,7 +49,7 @@
         </p>
         <p class="blog-date">
           <!-- created_at部分 下で変更します -->
-          <%= @blog.created_at %>
+          <%= @blog.created_at %> <!--.created_atは作成日時のカラム名-->
           <!-- created_at部分 ここまで -->
         </p>
       </div>
