@@ -1,6 +1,6 @@
 <header>
   <h1 class="heading">
-    <%= link_to "CARAVAN", blogs_path %> <!--「blogs_path」は#index-->
+    <%= link_to "CARAVAN", blogs_path %>
   </h1>
   <div class="social">
     <i class="fa fa-facebook-square"></i>
@@ -62,7 +62,7 @@
       <!-- <a href="#">編集</a> を削除、以下に変更 -->
       <%= link_to "編集", edit_blog_path(@blog) %>
       <!-- <a href="#">削除</a> を削除、以下に変更 -->
-      <%= link_to "削除", blog_path(@blog, method: :delete %>
+      <%= link_to "削除", blog_path(@blog), method: :delete %>
       <div class="author-case">
         <div class="author-image"></div>
         <div class="author-box">
@@ -115,6 +115,7 @@
     </section>
   </div>
 </main>
+
 <footer>
   <p class="footer-text">© All rights reserved by Infratop.Inc.</p>
 </footer>
